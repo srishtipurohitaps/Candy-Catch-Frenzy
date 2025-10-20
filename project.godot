@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Candy Catch Frenzy"
+run/main_scene="uid://r0pkpgdup26j"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [rendering]
 

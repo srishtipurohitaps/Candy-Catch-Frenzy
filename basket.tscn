@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://rfnm1c4vx4gq"]
+
+[ext_resource type="Texture2D" uid="uid://cg1od81vaq3mr" path="res://assets/Basket.png" id="1_7qm31"]
+[ext_resource type="Script" uid="uid://ckt3y8j3my2gv" path="res://basket.gd" id="1_e01at"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e01at"]
+size = Vector2(80, 40)
+
+[node name="Basket" type="Area2D"]
+script = ExtResource("1_e01at")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7qm31")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e01at")
+debug_color = Color(0, 0.6, 0.69803923, 0.003921569)

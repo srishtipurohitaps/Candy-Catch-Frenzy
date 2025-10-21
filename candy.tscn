@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkdg54e635gkm"]
+
+[ext_resource type="Texture2D" uid="uid://dygyffofu38fj" path="res://assets/Red_Candy.png" id="1_etb2s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pqqre"]
+radius = 159.0
+
+[node name="Candy" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_etb2s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_pqqre")
+debug_color = Color(0, 0.6, 0.69803923, 0)

@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkdg54e635gkm"]
+[gd_scene load_steps=4 format=3 uid="uid://bkdg54e635gkm"]
 
 [ext_resource type="Texture2D" uid="uid://dygyffofu38fj" path="res://assets/Red_Candy.png" id="1_etb2s"]
+[ext_resource type="Script" uid="uid://5hbiwugbukru" path="res://candy.gd" id="1_pqqre"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pqqre"]
 radius = 159.0
 
 [node name="Candy" type="Area2D"]
+script = ExtResource("1_pqqre")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_etb2s")

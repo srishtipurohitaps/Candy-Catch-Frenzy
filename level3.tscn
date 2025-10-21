@@ -115,6 +115,7 @@ theme_override_font_sizes/font_size = 36
 text = "PLAY AGAIN"
 
 [node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.6
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

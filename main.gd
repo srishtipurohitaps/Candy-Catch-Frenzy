@@ -25,19 +25,17 @@ func _ready():
 	restart_button.pressed.connect(_on_restart_pressed)
 
 func _process(delta):
-	# Rainbow background
+	
 	time_pass += delta
 	var hue = fmod(time_pass * 0.1, 1.0)
 	background.color = Color.from_hsv(hue, 0.3, 0.95)
 
-	# Timer countdown
 	if game_active and lives > 0:
 		game_time -= delta
 		timer_label.text = "Time: %d" % int(game_time)
 		if game_time <= 0:
 			game_over()
 
-	# Screen shake
 	if shake_amount > 0:
 		camera.offset = Vector2(
 			randf_range(-shake_amount, shake_amount),
@@ -50,9 +48,8 @@ func _process(delta):
 func _on_spawn_timer_timeout():
 	if not game_active:
 		return
-	# Speed up spawns over time
 	spawn_timer.wait_time = max(0.3, 1.0 - (60.0 - game_time) / 120.0)
-	if randf() < 0.16:
+	if randf() < 0.25:
 		spawn_bomb()
 	else:
 		spawn_candy()
@@ -63,7 +60,6 @@ func spawn_candy():
 
 	var r = randf()
 	if r < 0.05:
-		# Rainbow candy power-up
 		candy.get_node("Sprite2D").texture = preload("res://assets/Rainbow_Candy.png")
 		candy.points = 0
 		candy.fall_speed = 200

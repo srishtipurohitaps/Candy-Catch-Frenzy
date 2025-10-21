@@ -4,15 +4,15 @@
 [ext_resource type="Script" uid="uid://5hbiwugbukru" path="res://candy.gd" id="1_pqqre"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pqqre"]
-radius = 159.0
+radius = 51.0392
 
 [node name="Candy" type="Area2D"]
 script = ExtResource("1_pqqre")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.314, 0.313)
 texture = ExtResource("1_etb2s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_pqqre")
 debug_color = Color(0, 0.6, 0.69803923, 0)

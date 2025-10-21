@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://r0pkpgdup26j"]
+[gd_scene load_steps=7 format=3 uid="uid://r0pkpgdup26j"]
 
 [ext_resource type="Script" uid="uid://dao2etmf7jk3y" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://rfnm1c4vx4gq" path="res://basket.tscn" id="2_0xm2m"]
@@ -23,6 +23,11 @@ corner_radius_bottom_left = 20
 font_size = 72
 font_color = Color(0.7376877, 0.5097248, 0.4891793, 1)
 outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
+font_size = 48
+outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node2D"]
@@ -96,6 +101,18 @@ layout_mode = 2
 text = "GAME OVER!"
 label_settings = SubResource("LabelSettings_h2yge")
 horizontal_alignment = 1
+
+[node name="FinalScore" type="Label" parent="CanvasLayer/GameOverPanel/VBoxContainer"]
+layout_mode = 2
+text = "Final Score: 0"
+label_settings = SubResource("LabelSettings_1bvp3")
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="CanvasLayer/GameOverPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "PLAY AGAIN"
 
 [node name="SpawnTimer" type="Timer" parent="."]
 autostart = true

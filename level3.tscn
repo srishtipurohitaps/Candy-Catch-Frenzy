@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cbms6ugqm353t"]
 
-[ext_resource type="Script" uid="uid://dao2etmf7jk3y" path="res://main.gd" id="1_o2ccw"]
+[ext_resource type="Script" uid="uid://etruuwir2r87" path="res://main_level3.gd" id="1_o2ccw"]
 [ext_resource type="PackedScene" uid="uid://rfnm1c4vx4gq" path="res://basket.tscn" id="2_qrujo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]

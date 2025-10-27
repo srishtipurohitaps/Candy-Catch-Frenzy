@@ -1,31 +1,30 @@
 extends Node2D
 
-@onready var background        = $ColorRect
-@onready var spawn_timer       = $SpawnTimer
-@onready var score_label       = $CanvasLayer/ScoreLabel
-@onready var lives_label       = $CanvasLayer/LivesLabel
-@onready var timer_label       = $CanvasLayer/TimerLabel
-@onready var camera            = $Camera2D
-@onready var game_over_panel   = $CanvasLayer/GameOverPanel
-@onready var final_score_txt   = $CanvasLayer/GameOverPanel/VBoxContainer/FinalScore
-@onready var restart_button    = $CanvasLayer/GameOverPanel/VBoxContainer/RestartButton
+@onready var background = $ColorRect
+@onready var spawn_timer = $SpawnTimer
+@onready var score_label = $CanvasLayer/ScoreLabel
+@onready var lives_label = $CanvasLayer/LivesLabel
+@onready var timer_label = $CanvasLayer/TimerLabel
+@onready var camera = $Camera2D
+@onready var game_over_panel = $CanvasLayer/GameOverPanel
+@onready var final_score_txt = $CanvasLayer/GameOverPanel/VBoxContainer/FinalScore
+@onready var restart_button = $CanvasLayer/GameOverPanel/VBoxContainer/RestartButton
 
-var candy_scene  = preload("res://candy.tscn")
-var bomb_scene   = preload("res://bomb.tscn")
+var candy_scene = preload("res://candy.tscn")
+var bomb_scene = preload("res://bomb.tscn")
 
-var score        = 0
-var lives        = 3
-var game_time    = 60.0
-var time_pass    = 0.0
+var score = 0
+var lives = 3
+var game_time = 60.0
+var time_pass = 0.0
 var shake_amount = 0.0
-var game_active  = true
+var game_active = true
 
 func _ready():
 	spawn_timer.timeout.connect(_on_spawn_timer_timeout)
 	restart_button.pressed.connect(_on_restart_pressed)
 
 func _process(delta):
-	
 	time_pass += delta
 	var hue = fmod(time_pass * 0.1, 1.0)
 	background.color = Color.from_hsv(hue, 0.3, 0.95)
@@ -75,7 +74,7 @@ func spawn_candy():
 		candy.points = 25; candy.fall_speed = 280
 	elif r < 0.97:
 		candy.get_node("Sprite2D").texture = preload("res://assets/Green_Candy.png")
-		candy.points = 5;  candy.fall_speed = 260
+		candy.points = 5; candy.fall_speed = 260
 	else:
 		candy.get_node("Sprite2D").texture = preload("res://assets/Purple_Candy.png")
 		candy.points = 50; candy.fall_speed = 300
@@ -110,15 +109,10 @@ func missed_candy():
 		game_over()
 
 func activate_rainbow_powerup():
+	lives = 3
+	lives_label.text = "Lives: %d" % lives
 	$Basket.scale = Vector2(1.5,1.5)
-	var timer = Timer.new()
-	timer.wait_time = 5.0
-	timer.one_shot = true
-	timer.connect("timeout", Callable(self, "_end_rainbow_powerup"))
-	add_child(timer)
-	timer.start()
-
-func _end_rainbow_powerup():
+	await get_tree().create_timer(5.0).timeout
 	$Basket.scale = Vector2.ONE
 
 func game_over():

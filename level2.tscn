@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://by1o0vd6exowa"]
+[gd_scene load_steps=8 format=3 uid="uid://by1o0vd6exowa"]
 
 [ext_resource type="Script" uid="uid://dao2etmf7jk3y" path="res://main.gd" id="1_r40rm"]
 [ext_resource type="PackedScene" uid="uid://rfnm1c4vx4gq" path="res://basket.tscn" id="2_6q4t8"]
@@ -28,6 +28,11 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
 font_size = 48
 outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_r40rm"]
+font_size = 40
+outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node2D"]
@@ -113,6 +118,14 @@ custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "PLAY AGAIN"
+
+[node name="LevelLabel" type="Label" parent="CanvasLayer"]
+offset_left = 507.0
+offset_top = 80.0
+offset_right = 640.0
+offset_bottom = 135.0
+text = "Level 2"
+label_settings = SubResource("LabelSettings_r40rm")
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 0.8

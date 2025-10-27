@@ -35,23 +35,11 @@ func _ready():
 	spawn_timer.timeout.connect(_on_spawn_timer_timeout)
 	restart_button.pressed.connect(_on_restart_pressed)
 	game_time = max_time
-	
-	var level_lbl = Label.new()
-	level_lbl.text = "Level %d" % LEVEL_NUMBER
-	level_lbl.add_theme_font_size_override("font_size", 60)
-	level_lbl.add_theme_color_override("font_color", Color.WHITE)
-	level_lbl.offset_top = 40
-	level_lbl.z_index = 999
-	get_node("CanvasLayer").add_child(level_lbl)
-	await get_tree().create_timer(2.0).timeout
-	var tw = create_tween()
-	tw.tween_property(level_lbl, "modulate:a", 0, 0.5)
 
 func _process(delta):
 	time_pass += delta
 	var hue = fmod(time_pass * 0.1, 1.0)
 	background.color = Color.from_hsv(hue, 0.3, 0.95)
-
 	if game_active and lives > 0:
 		game_time -= delta
 		timer_label.text = "Time: %d" % int(game_time)

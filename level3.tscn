@@ -1,12 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbms6ugqm353t"]
+[gd_scene load_steps=7 format=3 uid="uid://cbms6ugqm353t"]
 
 [ext_resource type="Script" uid="uid://etruuwir2r87" path="res://main_level3.gd" id="1_o2ccw"]
 [ext_resource type="PackedScene" uid="uid://rfnm1c4vx4gq" path="res://basket.tscn" id="2_qrujo"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_o2ccw"]
-font_size = 40
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
 font_size = 40
@@ -43,14 +38,6 @@ script = ExtResource("1_o2ccw")
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.09608143, 0.20988944, 0.3797188, 1)
-
-[node name="LevelLabel" type="Label" parent="."]
-offset_left = 510.0
-offset_top = 80.0
-offset_right = 643.0
-offset_bottom = 135.0
-text = "Level 3"
-label_settings = SubResource("LabelSettings_o2ccw")
 
 [node name="Basket" parent="." instance=ExtResource("2_qrujo")]
 position = Vector2(576, 600)

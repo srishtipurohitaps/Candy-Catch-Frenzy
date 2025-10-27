@@ -8,7 +8,6 @@ func _ready():
 
 func _process(delta):
 	position.y += fall_speed * delta
-	
 	if position.y > 700:
 		queue_free()
 

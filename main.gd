@@ -23,6 +23,17 @@ var game_active = true
 func _ready():
 	spawn_timer.timeout.connect(_on_spawn_timer_timeout)
 	restart_button.pressed.connect(_on_restart_pressed)
+	
+	var level_lbl = Label.new()
+	level_lbl.text = "Main"
+	level_lbl.add_theme_font_size_override("font_size", 60)
+	level_lbl.add_theme_color_override("font_color", Color.WHITE)
+	level_lbl.offset_top = 40
+	level_lbl.z_index = 999
+	get_node("CanvasLayer").add_child(level_lbl)
+	await get_tree().create_timer(2.0).timeout
+	var tw = create_tween()
+	tw.tween_property(level_lbl, "modulate:a", 0, 0.5)
 
 func _process(delta):
 	time_pass += delta
@@ -56,7 +67,6 @@ func _on_spawn_timer_timeout():
 func spawn_candy():
 	var candy = candy_scene.instantiate()
 	candy.position = Vector2(randf_range(100, 1052), -50)
-
 	var r = randf()
 	if r < 0.05:
 		candy.get_node("Sprite2D").texture = preload("res://assets/Rainbow_Candy.png")
@@ -78,7 +88,6 @@ func spawn_candy():
 	else:
 		candy.get_node("Sprite2D").texture = preload("res://assets/Purple_Candy.png")
 		candy.points = 50; candy.fall_speed = 300
-
 	candy.fall_speed += (60.0 - game_time) * 2.0
 	add_child(candy)
 

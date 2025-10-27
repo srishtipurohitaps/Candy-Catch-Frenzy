@@ -5,7 +5,7 @@ extends Node2D
 @onready var score_label = $CanvasLayer/ScoreLabel
 @onready var lives_label = $CanvasLayer/LivesLabel
 @onready var timer_label = $CanvasLayer/TimerLabel
-@onready var level_label = $CanvasLayer/LevelLabel
+@onready var level_label = $LevelLabel
 @onready var camera = $Camera2D
 @onready var game_over_panel = $CanvasLayer/GameOverPanel
 @onready var final_score_txt = $CanvasLayer/GameOverPanel/VBoxContainer/FinalScore

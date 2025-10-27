@@ -1,12 +1,12 @@
-# Candy Catching Frenzy
+# Candy Catch Frenzy
 
-## What is Candy Catching Frenzy?
+## What is Candy Catch Frenzy?
 
-Candy Catching Frenzy is a simple, fast-paced game built in the Godot game engine using GDScript. You control a basket at the bottom of the screen and must catch as many falling candies as you can while dodging bombs. Some candies (like the rainbow one) refill your lives for a sweet comeback. Combo points reward skillful streaks.
+Candy Catch Frenzy is a simple, fast-paced game built in the Godot game engine using GDScript. You control a basket at the bottom of the screen and must catch as many falling candies as you can while dodging bombs. Some candies (like the rainbow one) refill your lives for a sweet comeback. Combo points reward skillful streaks.
 
 ## Why I Made This Project
 
-I made Candy Catching Frenzy to practice my Godot skills, experiment with quick game prototyping, and to make something fun and playable in a short time. My main goal was to get better at implementing game feel—animations, movement, and rewarding feedback, while exploring the basics of making a project from start to finish.
+I made Candy Catch Frenzy to practice my Godot skills, experiment with quick game prototyping, and to make something fun and playable in a short time. My main goal was to get better at implementing game feel, animations, movement, and rewarding feedback, while exploring the basics of making a project from start to finish.
 
 ## How I Made the Project
 
@@ -24,7 +24,7 @@ I made Candy Catching Frenzy to practice my Godot skills, experiment with quick 
 ## What I Struggled With & What I Learned
 
 - **Godot UI/Anchors:** Centering and fading in-game instructions on all resolutions required experimenting with Godot’s layout system and manual code adjustments.
-- **Polish:** Small touches—like screen shakes and pop-up labels, took lots of trial and error but make a big difference in “game feel.”
+- **Polish:** Small touches, like screen shakes and pop-up labels, took lots of trial and error but make a big difference in “game feel.”
 - **Difficulty/balance:** Making sure the action feels fair but challenging was hard without playtesters!
 - **Iteration:** I learned how valuable it is to frequently playtest, even on small projects, and to break the codebase into reusable scripts/scenes.
 

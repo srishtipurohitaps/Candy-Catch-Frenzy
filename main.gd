@@ -49,7 +49,7 @@ func _on_spawn_timer_timeout():
 	if not game_active:
 		return
 	spawn_timer.wait_time = max(0.3, 1.0 - (60.0 - game_time) / 120.0)
-	if randf() < 0.25:
+	if randf() < 0.16:
 		spawn_bomb()
 	else:
 		spawn_candy()
